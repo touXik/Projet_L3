@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 23 avr. 2022 à 01:40
--- Version du serveur :  10.4.10-MariaDB
--- Version de PHP :  7.3.12
+-- Hôte : localhost
+-- Généré le : ven. 06 mai 2022 à 22:19
+-- Version du serveur : 8.0.29-0ubuntu0.20.04.2
+-- Version de PHP : 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `swettails`
+-- Base de données : `swettails`
 --
 
 -- --------------------------------------------------------
@@ -28,16 +27,22 @@ SET time_zone = "+00:00";
 -- Structure de la table `contact`
 --
 
-DROP TABLE IF EXISTS `contact`;
-CREATE TABLE IF NOT EXISTS `contact` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `contact` (
+  `id` int NOT NULL,
   `Nom` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `sujet` varchar(255) NOT NULL,
   `message_pub` text NOT NULL,
-  `date_pub` timestamp NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=latin1;
+  `date_pub` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `contact`
+--
+
+INSERT INTO `contact` (`id`, `Nom`, `email`, `sujet`, `message_pub`, `date_pub`) VALUES
+(73, 'tt', 'tt@t', 'ttt', 'tttt', '2022-04-28 19:09:03'),
+(74, 'tt', 'tt@t', 'ttt', 'tttt', '2022-04-28 19:09:25');
 
 -- --------------------------------------------------------
 
@@ -45,19 +50,17 @@ CREATE TABLE IF NOT EXISTS `contact` (
 -- Structure de la table `demande`
 --
 
-DROP TABLE IF EXISTS `demande`;
-CREATE TABLE IF NOT EXISTS `demande` (
+CREATE TABLE `demande` (
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `adress` text NOT NULL,
   `demande` text NOT NULL,
-  `date_env` timestamp NOT NULL DEFAULT current_timestamp(),
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_animal` int(11) NOT NULL,
-  `nom_animal` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+  `date_env` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id` int NOT NULL,
+  `id_animal` int NOT NULL,
+  `nom_animal` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -65,15 +68,25 @@ CREATE TABLE IF NOT EXISTS `demande` (
 -- Structure de la table `f_animaux`
 --
 
-DROP TABLE IF EXISTS `f_animaux`;
-CREATE TABLE IF NOT EXISTS `f_animaux` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `f_animaux` (
+  `id` int NOT NULL,
   `sujet` text NOT NULL,
   `contenu` text NOT NULL,
   `date_heure_creation` datetime NOT NULL,
-  `date_edit` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
+  `date_edit` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `f_animaux`
+--
+
+INSERT INTO `f_animaux` (`id`, `sujet`, `contenu`, `date_heure_creation`, `date_edit`) VALUES
+(57, 'minoucha', 'amkhikhiiwww yarnad', '2022-05-06 17:02:45', '2022-05-06 17:02:45'),
+(58, 'minoucha', 'amkhikhiiwww yarnad', '2022-05-06 17:08:19', '2022-05-06 17:08:19'),
+(59, 'rafiq', '22abns\r\ndabigos', '2022-05-06 17:11:55', '2022-05-06 17:11:55'),
+(60, 'rafiq', '22abns\r\ndabigos', '2022-05-06 17:14:52', '2022-05-06 17:14:52'),
+(61, 'rafiq', '22abns\r\ndabigos', '2022-05-06 17:16:45', '2022-05-06 17:16:45'),
+(62, 'toufik', '22abns\r\ndabigos', '2022-05-06 17:29:44', '2022-05-06 17:29:44');
 
 -- --------------------------------------------------------
 
@@ -81,14 +94,12 @@ CREATE TABLE IF NOT EXISTS `f_animaux` (
 -- Structure de la table `f_animaux_categorie`
 --
 
-DROP TABLE IF EXISTS `f_animaux_categorie`;
-CREATE TABLE IF NOT EXISTS `f_animaux_categorie` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_animal` int(11) NOT NULL,
-  `id_categorie` int(11) NOT NULL,
-  `id_souscategorie` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+CREATE TABLE `f_animaux_categorie` (
+  `id` int NOT NULL,
+  `id_animal` int NOT NULL,
+  `id_categorie` int NOT NULL,
+  `id_souscategorie` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `f_animaux_categorie`
@@ -148,7 +159,12 @@ INSERT INTO `f_animaux_categorie` (`id`, `id_animal`, `id_categorie`, `id_sousca
 (51, 53, 3, 8),
 (52, 54, 5, 15),
 (53, 55, 5, 15),
-(54, 56, 5, 14);
+(54, 56, 5, 14),
+(55, 58, 2, 19),
+(56, 59, 2, 19),
+(57, 60, 2, 19),
+(58, 61, 2, 19),
+(59, 62, 2, 19);
 
 -- --------------------------------------------------------
 
@@ -156,12 +172,10 @@ INSERT INTO `f_animaux_categorie` (`id`, `id_animal`, `id_categorie`, `id_sousca
 -- Structure de la table `f_categories`
 --
 
-DROP TABLE IF EXISTS `f_categories`;
-CREATE TABLE IF NOT EXISTS `f_categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+CREATE TABLE `f_categories` (
+  `id` int NOT NULL,
+  `nom` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `f_categories`
@@ -181,13 +195,11 @@ INSERT INTO `f_categories` (`id`, `nom`) VALUES
 -- Structure de la table `f_souscategories`
 --
 
-DROP TABLE IF EXISTS `f_souscategories`;
-CREATE TABLE IF NOT EXISTS `f_souscategories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_categorie` int(11) NOT NULL,
-  `nom` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+CREATE TABLE `f_souscategories` (
+  `id` int NOT NULL,
+  `id_categorie` int NOT NULL,
+  `nom` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `f_souscategories`
@@ -214,13 +226,42 @@ INSERT INTO `f_souscategories` (`id`, `id_categorie`, `nom`) VALUES
 -- Structure de la table `images`
 --
 
-DROP TABLE IF EXISTS `images`;
-CREATE TABLE IF NOT EXISTS `images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `images` (
+  `id` int NOT NULL,
   `img` varchar(255) NOT NULL,
-  `id_animal` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+  `id_animal` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `inf`
+--
+
+CREATE TABLE `inf` (
+  `n_id` int NOT NULL,
+  `notifications_name` text NOT NULL,
+  `message` text NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `inf`
+--
+
+INSERT INTO `inf` (`n_id`, `notifications_name`, `message`, `active`) VALUES
+(1, 'ttt', 'fff', 0),
+(2, 'minoucha', 'amkhikhiiwww yarnad', 0),
+(3, '0', '22abns\r\ndabigos', 0),
+(4, '0', '22abns\r\ndabigos', 0),
+(5, 'animale ajouter : rafiq ', '22abns\r\ndabigos', 0),
+(6, 'nouvaux 19 ajouter', '22abns\r\ndabigos', 0),
+(7, 'delmel', 'chouuuuumm', 0),
+(8, 'abouh', 'abouh', 0),
+(9, 'ttt', 'ttttt', 0),
+(10, 'tttt', 'tttttttttt', 0),
+(11, 'hamoudllaa', 'aaaaa', 0),
+(12, 'ohooooo', 'ronaldo', 0);
 
 -- --------------------------------------------------------
 
@@ -228,17 +269,138 @@ CREATE TABLE IF NOT EXISTS `images` (
 -- Structure de la table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `user` (
+  `id` int NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `firstname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `lastname`, `firstname`, `email`, `password`, `date`) VALUES
+(1, 't', 't', 'a@a', '$2y$12$vEG1BCI48rPrkqBMK7AK4uToPCSq/APDBgQ/5vHnov7NuweAsxOh2', '2022-05-06 17:02:59');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `demande`
+--
+ALTER TABLE `demande`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `f_animaux`
+--
+ALTER TABLE `f_animaux`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `f_animaux_categorie`
+--
+ALTER TABLE `f_animaux_categorie`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `f_categories`
+--
+ALTER TABLE `f_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `f_souscategories`
+--
+ALTER TABLE `f_souscategories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `inf`
+--
+ALTER TABLE `inf`
+  ADD PRIMARY KEY (`n_id`);
+
+--
+-- Index pour la table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+
+--
+-- AUTO_INCREMENT pour la table `demande`
+--
+ALTER TABLE `demande`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `f_animaux`
+--
+ALTER TABLE `f_animaux`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+
+--
+-- AUTO_INCREMENT pour la table `f_animaux_categorie`
+--
+ALTER TABLE `f_animaux_categorie`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
+--
+-- AUTO_INCREMENT pour la table `f_categories`
+--
+ALTER TABLE `f_categories`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT pour la table `f_souscategories`
+--
+ALTER TABLE `f_souscategories`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT pour la table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT pour la table `inf`
+--
+ALTER TABLE `inf`
+  MODIFY `n_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

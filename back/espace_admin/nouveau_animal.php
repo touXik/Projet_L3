@@ -39,6 +39,8 @@ if(isset($_GET['categorie'])) {
                         $ins->execute(array($sujet,$contenu));
                         $lastid = $bdd->lastInsertId();
                         
+                       
+                        
              
 
                         $lt = $bdd->query('SELECT id FROM f_animaux ORDER BY id DESC LIMIT 0,1');
@@ -46,7 +48,14 @@ if(isset($_GET['categorie'])) {
                         $id_animal = $lt['id'];
                         $ins = $bdd->prepare('INSERT INTO f_animaux_categorie (id_animal, id_categorie, id_souscategorie) VALUES (?,?,?)');
                         $ins->execute(array($id_animal, $get_categorie, $souscategorie));
-                        
+                         
+                        $act=1;
+                        $ajout="nouvaux $souscategorie ajouter";
+                        $s_ajout=" $sujet $contenu ";
+                        $notife= $bdd -> prepare('INSERT INTO inf (notifications_name, message, active) VALUES(?,?,?)');
+                        $notife -> execute(array($ajout,$contenu,$act));
+
+
                         if(isset($_FILES['img']) AND !empty($_FILES['img']['name'])) {
                            // $tailleMax = 2097152;
                            $tailleMax = 3097152;

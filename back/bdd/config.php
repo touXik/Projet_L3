@@ -13,3 +13,15 @@ try{
 	echo $e;
 
 }
+
+?>
+<?php
+
+   $connection = mysqli_connect(HOST,USER,PASS,DB_NAME);
+   if($connection){
+       return $connection;
+   }else{
+       echo "Connect problem".mysqli_connect_error();
+   }
+
+?>
