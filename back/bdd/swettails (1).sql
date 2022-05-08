@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : ven. 06 mai 2022 à 22:19
+-- Généré le : dim. 08 mai 2022 à 02:28
 -- Version du serveur : 8.0.29-0ubuntu0.20.04.2
 -- Version de PHP : 7.4.3
 
@@ -244,24 +244,6 @@ CREATE TABLE `inf` (
   `message` text NOT NULL,
   `active` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `inf`
---
-
-INSERT INTO `inf` (`n_id`, `notifications_name`, `message`, `active`) VALUES
-(1, 'ttt', 'fff', 0),
-(2, 'minoucha', 'amkhikhiiwww yarnad', 0),
-(3, '0', '22abns\r\ndabigos', 0),
-(4, '0', '22abns\r\ndabigos', 0),
-(5, 'animale ajouter : rafiq ', '22abns\r\ndabigos', 0),
-(6, 'nouvaux 19 ajouter', '22abns\r\ndabigos', 0),
-(7, 'delmel', 'chouuuuumm', 0),
-(8, 'abouh', 'abouh', 0),
-(9, 'ttt', 'ttttt', 0),
-(10, 'tttt', 'tttttttttt', 0),
-(11, 'hamoudllaa', 'aaaaa', 0),
-(12, 'ohooooo', 'ronaldo', 0);
 
 -- --------------------------------------------------------
 
