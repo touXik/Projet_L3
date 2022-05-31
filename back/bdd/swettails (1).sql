@@ -76,17 +76,7 @@ CREATE TABLE `f_animaux` (
   `date_edit` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `f_animaux`
---
 
-INSERT INTO `f_animaux` (`id`, `sujet`, `contenu`, `date_heure_creation`, `date_edit`) VALUES
-(57, 'minoucha', 'amkhikhiiwww yarnad', '2022-05-06 17:02:45', '2022-05-06 17:02:45'),
-(58, 'minoucha', 'amkhikhiiwww yarnad', '2022-05-06 17:08:19', '2022-05-06 17:08:19'),
-(59, 'rafiq', '22abns\r\ndabigos', '2022-05-06 17:11:55', '2022-05-06 17:11:55'),
-(60, 'rafiq', '22abns\r\ndabigos', '2022-05-06 17:14:52', '2022-05-06 17:14:52'),
-(61, 'rafiq', '22abns\r\ndabigos', '2022-05-06 17:16:45', '2022-05-06 17:16:45'),
-(62, 'toufik', '22abns\r\ndabigos', '2022-05-06 17:29:44', '2022-05-06 17:29:44');
 
 -- --------------------------------------------------------
 
