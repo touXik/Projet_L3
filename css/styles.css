@@ -133,6 +133,15 @@ section{
     display: none;
 }
 
+ /* ------------notiiifff---------- */
+ #over{
+     width: 150px;
+     
+ }
+ #list{
+
+ }
+
 /* --- bg du site ---- */
 .home{
     padding-top:3.7rem;
@@ -397,7 +406,7 @@ section{
 }
 .share {
   position: fixed;
-  bottom: 22px;
+  bottom: 62px;
   right: 15px;
 }
 .share ol {
@@ -442,7 +451,41 @@ section{
   transition-delay: .3s;
   transform: translateY(-180px);
 }
+/* .share.activee ol li:nth-child(4) {
+    transition-delay: .3s;
+    transform: translateX(-55px);
+  } */
 
+  .toggle_dons {
+    width: 50px;
+    height: 50px;
+    background: #d11010;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+  }
+  
+ .toggle_dons::before {
+    content: '\f004';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: white;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    text-align: center;
+    line-height: 50px;
+    font-size: 22px;
+  }
+  .share_dons.activee .toggle::before {
+    content: '\f00d';
+    font-size: 2rem;
+  }
+  .share_dons {
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+  }
 
      
         

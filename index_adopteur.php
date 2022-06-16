@@ -90,9 +90,11 @@
            
         <!-- <nav class="navbar navbar-inverse"> -->
                 <!-- <div class="container-fluid"> -->
-                  
+            
+        </nav>
+        <div class="notif">
                   <ul class="nav navbar-nav navbar-right">
-                    <li><i class="fa fa-bell"   id="over" data-value ="<?php echo $count_active;?>" style="z-index:-99 !important;font-size:32px;color:black;margin:0.5rem 0.4rem !important;"></i></li>
+                    <li><i class="fa fa-bell"   id="over" data-value ="<?php echo $count_active;?>"></i></li>
                     <?php if(!empty($count_active)){?>
                     <div class="round" id="bell-count" data-value ="<?php echo $count_active;?>"><span><?php echo $count_active; ?></span></div>
                     <?php }?>
@@ -139,9 +141,8 @@
                   </ul>
                           <!-- </div> -->
 
-
+            </div>
                           
-        </nav>
 
     <div id="login-btn">
            
@@ -154,8 +155,10 @@
     <img data-speed="5" class="home-parallax" src="images/babash.jpg" alt="background du site">
 </div>
 
+
+
 <!--- slider vers le bas --->
-<div class="landing" align="center">
+<div class="landing" align="center" >
     <a href="#categories" class="delivery-link">
        
         <i class="scroll-icon fas fa-angle-down"></i> <br>
@@ -248,8 +251,16 @@
       <li><a target="-_blank" href="https://instagram.com"><i class="fab fa-instagram fa-2x"></i></a></li> 
       <li><a target="_blank" href="https://facebook.com"><i class="fab fa-facebook fa-2x"></i></a></li>
       <li><a target="_blank" href="https://twitter.com"><i class="fab fa-twitter fa-2x"></i></a></li>
+    
     </ol>
     <div class="toggle"></div>
+  </div>
+</section>
+
+<section  id="bouton_dons">
+  <div class="share_dons">
+ 
+    <a href="html/paiement.html"><div class="toggle_dons"></div></a>
   </div>
 </section>
 

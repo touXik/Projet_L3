@@ -195,10 +195,23 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
       <li><a target="-_blank" href="https://instagram.com"><i class="fab fa-instagram fa-2x"></i></a></li> 
       <li><a target="_blank" href="https://facebook.com"><i class="fab fa-facebook fa-2x"></i></a></li>
       <li><a target="_blank" href="https://twitter.com"><i class="fab fa-twitter fa-2x"></i></a></li>
+  
     </ol>
     <div class="toggle"></div>
   </div>
+
+ 
 </section>
+
+<section  id="bouton_dons">
+  <div class="share_dons">
+ 
+    <a href="html/paiement.html"><div class="toggle_dons"></div></a>
+  </div>
+</section>
+
+
+
 
 
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
