@@ -4,7 +4,7 @@
 //       header('Location: conexion.html');
 //   }
   
-require('..bdd/config.php');
+require('../bdd/config.php');
 require('../functions.php');
          
 $mode_edit=0;

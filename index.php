@@ -61,49 +61,8 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
     </a>
 </div>
 
-<!--- categories --->
-<!-- <section class="categories" id="categories"> -->
 
-   <!--  <h1 class="heading">nos <span>categories</span> </h1> -->
-<!-- 
-    <div class="swiper vehicles-slider">
 
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide box">
-                <a href="back/affiche_categorie/chats.php"><img src="images/amcic.PNG" alt=""></a>
-                <div class="content">
-                    <h3>chats</h3>
-                </div>
-            </div>
-
-            <div class="swiper-slide box">
-                <a href="back/affiche_categorie/chiens.php"><img src="images/aqjun.PNG" alt=""></a>
-                <div class="content">
-                    <h3>chiens</h3>
-                </div>
-            </div>
-
-            <div class="swiper-slide box">
-                <a href="back/affiche_categorie/equide.php"><img src="images/1.jpg" alt=""></a>
-                <div class="content">
-                    <h3>équidés</h3>
-                </div>
-            </div>
-
-            <div class="swiper-slide box">
-                <a href="back/affiche_categorie/rogneur.php"><img src="images/awtul.jpg" alt=""></a>
-                <div class="content">
-                    <h3>rongeurs</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="swiper-pagination"></div>
-
-    </div>
-
-</section> -->
 
    <!-- ----------------------------------------     CATEGORIE ET SOUS CATEGORIE ---------------------- -->
    <table class="forum">
@@ -166,7 +125,7 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
     </div>
 
 </section>
-<section>
+
     <!--- a propos --->
     <section class="a-propos" id="a-propos">
       <h1 class="heading">à <span>propos</span></h1>
@@ -180,14 +139,52 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
     </section>
 
 
+                   <!--------------------------------------- pub --->
+<section class="categories" id="categories"> 
 
-    <!--- footer --->
-    <footer id="footer" class="footer"> 
-      <span class="copyrights">&copy; 2022 - Sweet tails</span>
-      <a href="#" class="conditions">Conditions générales d'adoption</a>
-    </footer>
+<!-- <h1 class="heading">nos <span>categories</span> </h1>  -->
 
-</section>
+<div class="swiper vehicles-slider">
+
+    <div class="swiper-wrapper">
+
+        <div class="swiper-slide box">
+            <a href="back/affiche_categorie/chats.php"><img src="images/s1.jpg" alt=""></a>
+            <!-- <div class="content">
+                <h3>chats</h3>
+            </div> -->
+        </div>
+
+        <div class="swiper-slide box">
+            <a href="back/affiche_categorie/chiens.php"><img src="images/s2.jpg" alt=""></a>
+            <!-- <div class="content">
+                <h3>chiens</h3>
+            </div> -->
+        </div>
+
+        <div class="swiper-slide box">
+            <a href="back/affiche_categorie/equide.php"><img src="images/s3.jpg" alt=""></a>
+            <!-- <div class="content">
+                <h3>équidés</h3>
+            </div> -->
+        </div>
+
+        <div class="swiper-slide box">
+            <a href="back/affiche_categorie/rogneur.php"><img src="images/s4.jpg" alt=""></a>
+            <!-- <div class="content">
+                <h3>rongeurs</h3>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+</div>
+    </section>
+
+
+
+
 <!--- boutons partages  --->
 <section  id="bouton_partage">
   <div class="share">
@@ -206,17 +203,41 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
 <section  id="bouton_dons">
   <div class="share_dons">
  
-    <a href="html/paiement.html"><div class="toggle_dons"></div></a>
+    <a href="html/paiement.html" onmouseover="jedonne()" onmouseout="jedonnep()" ><div class="toggle_dons"></div></a>
   </div>
+  <a href="html/paiement.html"> <div id="txtdon" class="txtdon">
+        <p>Je donne</p>
+  </div></a> 
+ 
 </section>
 
 
 
 
 
+    <!--- footer --->
+    <footer id="footer" class="footer"> 
+
+      <span class="copyrights">&copy; 2022 - Sweet tails</span>
+      <a href="#" class="conditions">Conditions générales d'adoption</a>
+    </footer>
+
+<!--- js --->
+<script>
+var cont= document.getElementById('txtdon');
+
+function jedonne(){
+
+        cont.style.display="block";
+}
+function jedonnep(){
+
+cont.style.display="none";
+}</script>
+
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
-<!--- js --->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 
@@ -225,8 +246,7 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
 
 
 <!---- ---->
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-<script src="js/script.js"></script>
+
 </body>
 
 </html> 

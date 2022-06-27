@@ -17,14 +17,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../CSS/admin/message.css">
-  <link rel="icon" type="images/png" href="../../images/log2.jpeg">
+  <link rel="stylesheet" href="../../../CSS/admin/message.css">
+  <link rel="icon" type="images/png" href="../../../images/log2.jpeg">
   <title>admin-messages</title>
 </head>
 <body>
 
                <div class="menu">
-                    <button ><a href="logout.php"> DECONEXION</a></button>
+                    <button ><a href="../php/logout.php"> DECONEXION</a></button>
                      <button ><a href="../index.php"> acuille</a></button>
               </div>
 

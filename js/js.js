@@ -1,12 +1,6 @@
 
-$(document).ready(function(){
-    var typed = new Typed(".texte", {
-        strings: ["adopte-le", "aime-le","protège-le"],
-        typeSpeed: 80,
-        backSpeed: 60,
-        loop: true
-    });
-});
+
+
 
 
 //bouton__partage -------------------------------------------------------------
@@ -27,4 +21,7 @@ const burgerContainer = document.querySelector('.burger-container');
             burgerContainer.classList.toggle('active');
             navLinks.classList.toggle('active');
         })
-      
+
+//_____________________________________________________________
+
+

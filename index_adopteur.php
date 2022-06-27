@@ -9,33 +9,7 @@
   $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? ORDER BY nom');
  
 ?>
- <?php
-            //  include("back/systeme_notifications/connection/DB.php");
-       $find_notifications = "Select * from inf where active = 1";
-       $result = mysqli_query($connection,$find_notifications);
-       $count_active = '';
-       $notifications_data = array(); 
-       $deactive_notifications_dump = array();
-        while($rows = mysqli_fetch_assoc($result)){
-                $count_active = mysqli_num_rows($result);
-                $notifications_data[] = array(
-                            "n_id" => $rows['n_id'],
-                            "notifications_name"=>$rows['notifications_name'],
-                            "message"=>$rows['message']
-                );
-        }
-        //only five specific posts
-        $deactive_notifications = "Select * from inf where active = 0 ORDER BY n_id DESC LIMIT 0,5";
-        $result = mysqli_query($connection,$deactive_notifications);
-        while($rows = mysqli_fetch_assoc($result)){
-          $deactive_notifications_dump[] = array(
-                      "n_id" => $rows['n_id'],
-                      "notifications_name"=>$rows['notifications_name'],
-                      "message"=>$rows['message']
-          );
-        }
 
-     ?>
 
 
 <!DOCTYPE html>
@@ -47,22 +21,22 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="icon" type="images/png" href="images/log2.jpeg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" /> -->
  
     <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
 
        <!-- --------------------------------------------------- -->
   
    
   
     
-    <link rel="stylesheet" type="text/css" href="back/systeme_notifications/assets/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="back/systeme_notifications/assets/stl_not.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="back/systeme_notifications/assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="back/systeme_notifications/assets/stl_not.css"/> -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
-    <script src="back/systeme_notifications/assets/js/jquery.min.js"></script>
+    <!-- <script src="back/systeme_notifications/assets/js/jquery.min.js"></script>
     <script src="back/systeme_notifications/assets/js/bootstrap.min.js"></script>
-    <script src="back/systeme_notifications/assets/dyn_not.js"></script>
+    <script src="back/systeme_notifications/assets/dyn_not.js"></script> -->
 
 
 
@@ -92,56 +66,7 @@
                 <!-- <div class="container-fluid"> -->
             
         </nav>
-        <div class="notif">
-                  <ul class="nav navbar-nav navbar-right">
-                    <li><i class="fa fa-bell"   id="over" data-value ="<?php echo $count_active;?>"></i></li>
-                    <?php if(!empty($count_active)){?>
-                    <div class="round" id="bell-count" data-value ="<?php echo $count_active;?>"><span><?php echo $count_active; ?></span></div>
-                    <?php }?>
-                     
-                    <?php if(!empty($count_active)){?>
-                      <div id="list">
-                       <?php
-                          foreach($notifications_data as $list_rows){?>
-                            <li id="message_items">
-                            <div class="message alert alert-warning" data-id=<?php echo $list_rows['n_id'];?>>
-                              <span><?php echo $list_rows['notifications_name'];?></span>
-                              <div class="msg">
-                                <p><?php 
-                                  echo $list_rows['message'];
-                                ?></p>
-                              </div>
-                            </div>
-                            </li>
-                         <?php }
-                       ?> 
-                       </div> 
-                     <?php }else{?>
-                        <!--old Messages-->
-                        <div id="list">
-                        <?php
-                          foreach($deactive_notifications_dump as $list_rows){?>
-                            <li id="message_items">
-                            <div class="message alert alert-danger" data-id=<?php echo $list_rows['n_id'];?>>
-                              <span><?php echo $list_rows['notifications_name'];?></span>
-                              <div class="msg">
-                                <p><?php 
-                                  echo $list_rows['message'];
-                                ?></p>
-                              </div>
-                            </div>
-                            </li>
-                         <?php }
-                       ?>
-                        <!--old Messages-->
-                     
-                     <?php } ?>
-                     
-                     </div>
-                  </ul>
-                          <!-- </div> -->
-
-            </div>
+     
                           
 
     <div id="login-btn">
@@ -199,7 +124,7 @@
 
 </section>
 
-<!--- sevices  --->
+<!--------------------------------------------- sevices  ------------------------------------------------>
 
 <section class="services" id="services">
 
@@ -232,7 +157,7 @@
 
 </section>
 
-<!--- a propos --->
+<!------------------------------------------------- a propos ----------------------------------------->
 <section class="a-propos" id="a-propos">
   <h1 class="heading">à <span>propos</span></h1>
 
@@ -244,7 +169,51 @@
   </h1>   
 </section>
 
-<!--- boutons partages  --->
+
+<!---------------------------------------------------- pub ----------------------------------------->
+  <!-- <section class="categories" id="categories"> 
+
+<h1 class="heading">nos <span>categories</span> </h1> 
+
+<div class="swiper vehicles-slider">
+
+    <div class="swiper-wrapper">
+
+        <div class="swiper-slide box">
+            <a href="back/affiche_categorie/chats.php"><img src="images/s1.jpg" alt=""></a>
+            <div class="content">
+                <h3>chats</h3>
+            </div>
+        </div>
+
+        <div class="swiper-slide box">
+            <a href="back/affiche_categorie/chiens.php"><img src="images/s2.jpg" alt=""></a>
+            <div class="content">
+                <h3>chiens</h3>
+            </div>
+        </div>
+
+        <div class="swiper-slide box">
+            <a href="back/affiche_categorie/equide.php"><img src="images/s3.jpg" alt=""></a>
+            <div class="content">
+                <h3>équidés</h3>
+            </div>
+        </div>
+
+        <div class="swiper-slide box">
+            <a href="back/affiche_categorie/rogneur.php"><img src="images/s4.jpg" alt=""></a>
+            <div class="content">
+                <h3>rongeurs</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+</div>
+    </section> -->
+
+<!-------------------------------------- boutons partages ----------------------------------- --->
 <section  id="bouton_partage">
   <div class="share">
     <ol>
@@ -256,13 +225,18 @@
     <div class="toggle"></div>
   </div>
 </section>
-
+   <!-- ----------------------------------------button dons---------------------------------- -->
 <section  id="bouton_dons">
   <div class="share_dons">
  
-    <a href="html/paiement.html"><div class="toggle_dons"></div></a>
+    <a href="html/paiement.html" onmouseover="jedonne()" onmouseout="jedonnep()" ><div class="toggle_dons"></div></a>
   </div>
+  <a href="html/paiement.html"> <div id="txtdon" class="txtdon">
+        <p>Je donne</p>
+  </div></a> 
+ 
 </section>
+
 
 <!--- footer --->
 <footer id="footer" class="footer"> 
@@ -272,9 +246,27 @@
 
 
 
+
+
+<!--- js --->
+
+
+<script>
+var cont= document.getElementById('txtdon');
+
+function jedonne(){
+
+        cont.style.display="block";
+}
+function jedonnep(){
+
+cont.style.display="none";
+}</script>
+
+
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
-<!--- js --->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 
@@ -283,8 +275,8 @@
 
 
 <!---- ---->
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-<script src="js/script.js"></script>
+<!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script> -->
 </body>
 
 </html> 
