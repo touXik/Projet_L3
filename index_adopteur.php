@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(! $_SESSION['email']  ) {
-      header('Location:html/login.html');
+      header('Location:index.php');
   }
  
   require('back/bdd/config.php'); /* Contient la connexion à la $bdd */
@@ -21,10 +21,10 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="icon" type="images/png" href="images/log2.jpeg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
  
     <!-- font awesome cdn link  -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
        <!-- --------------------------------------------------- -->
   
@@ -77,14 +77,15 @@
 
 <!--- bg du site --->
 <div class="home" id="home">
-    <img data-speed="5" class="home-parallax" src="images/babash.jpg" alt="background du site">
+    <img data-speed="5" class="home-parallax" src="images/f.jpg" alt="background du site">
+    <h1 class="big-title">N'achetez pas votre <br> animal de compagnie,<span class="texte"></span> </h1>
 </div>
 
 
 
 <!--- slider vers le bas --->
 <div class="landing" align="center" >
-    <a href="#categories" class="delivery-link">
+    <a href="#catégorie" class="delivery-link">
        
         <i class="scroll-icon fas fa-angle-down"></i> <br>
         <span class="scroll-text" data-text="Categories"></span>
@@ -92,36 +93,38 @@
 </div>
 
 <!--- categories --->
-<section class="categories" id="categories">
+<!-- ----------------------------------------     CATEGORIE ET SOUS CATEGORIE ---------------------- -->
+ 
 
+<section id="catégorie">
+ <div class="section">
+
+                      <?php
+    require('back/espace_admin/php/functions.php');
+   while($c = $categories->fetch()) {
+      $subcat->execute(array($c['id']));
+      $souscategories = '';
+      while($sc = $subcat->fetch()) {
+        $souscategories .= '<a href="back/affiche_animaux.php?categorie='.url_custom_encode($c['nom']).'&souscategorie='.url_custom_encode($sc['nom']).'">'.$sc['nom'].'</a> | ';
+    }
+      $souscategories = substr($souscategories, 0, -3);
+   ?>
+        <div class="contener">
+             <!-- <div class="con"> -->
+             
+             <a href="back/affiche_animaux.php?categorie=<?= url_custom_encode($c['nom']) ?>"><img src="./images/<?=$c['image']?>" alt="img"></a>
+             
+             <!-- </div> -->
+        <div class="txt_cat">
+        <h1><a href="back/affiche_animaux.php?categorie=<?= url_custom_encode($c['nom']) ?>"><?= $c['nom'] ?></a></h1>
+         
    
-    <table class="forum">
-    <!-- <tr class="header">
-       <th class="main">Catégories</th>
-  
-    </tr> -->
-    <?php
-   require('back/espace_admin/php/functions.php');
-    while($c = $categories->fetch()) {
-       $subcat->execute(array($c['id']));
-       $souscategories = '';
-       while($sc = $subcat->fetch()) {
-          $souscategories .= '<a href="back/affiche_animaux.php?categorie='.url_custom_encode($c['nom']).'&souscategorie='.url_custom_encode($sc['nom']).'">'.$sc['nom'].'</a> | ';
-       }
-       $souscategories = substr($souscategories, 0, -3);
-    ?>
-    <tr>
-       <td class="main">
-          <h1><a href="back/affiche_animaux.php?categorie=<?= url_custom_encode($c['nom']) ?>"><?= $c['nom'] ?></a></h1>
-          <p>
-          <?= $souscategories ?>
-          </p>
-       </td>
-  
-    </tr>
-    <?php } ?>
- </table>
+        </div>
+ </div>
+   <?php } ?>
 
+    </div>
+ 
 </section>
 
 <!--------------------------------------------- sevices  ------------------------------------------------>
@@ -169,7 +172,47 @@
   </h1>   
 </section>
 
+<section class="categories" id="categories"> 
 
+<!-- <h1 class="heading">nos <span>categories</span> </h1>  -->
+
+<div class="swiper vehicles-slider">
+
+    <div class="swiper-wrapper">
+
+        <div class="swiper-slide box">
+            <a href="back/affiche_categorie/chats.php"><img src="images/s1.jpg" alt=""></a>
+            <!-- <div class="content">
+                <h3>chats</h3>
+            </div> -->
+        </div>
+
+        <div class="swiper-slide box">
+            <a href="back/affiche_categorie/chiens.php"><img src="images/s2.jpg" alt=""></a>
+            <!-- <div class="content">
+                <h3>chiens</h3>
+            </div> -->
+        </div>
+
+        <div class="swiper-slide box">
+            <a href="back/affiche_categorie/equide.php"><img src="images/s3.jpg" alt=""></a>
+            <!-- <div class="content">
+                <h3>équidés</h3>
+            </div> -->
+        </div>
+
+        <div class="swiper-slide box">
+            <a href="back/affiche_categorie/rogneur.php"><img src="images/s4.jpg" alt=""></a>
+            <!-- <div class="content">
+                <h3>rongeurs</h3>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+</div>
+    </section>
 <!---------------------------------------------------- pub ----------------------------------------->
   <!-- <section class="categories" id="categories"> 
 
@@ -271,7 +314,7 @@ cont.style.display="none";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 
 <script type="text/javascript" src="js/js.js"></script>
-<script src="https://kit.fontawesome.com/9f75563516.js" crossorigin="anonymous"></script>
+<!-- <script src="https://kit.fontawesome.com/9f75563516.js" crossorigin="anonymous"></script> -->
 
 
 <!---- ---->

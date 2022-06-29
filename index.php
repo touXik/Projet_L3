@@ -49,12 +49,13 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
 
 <!--- bg du site --->
 <div class="home" id="home">
-    <img data-speed="5" class="home-parallax" src="images/babash.jpg" alt="background du site">
+    <img data-speed="5" class="home-parallax" src="images/f.jpg" alt="background du site">
+    <h1 class="big-title">N'achetez pas votre <br> animal de compagnie,<span class="texte"></span> </h1>
 </div>
 
 <!--- slider vers le bas --->
 <div class="landing" align="center">
-    <a href="#categories" class="delivery-link">
+    <a href="#catégorie" class="delivery-link">
        
         <i class="scroll-icon fas fa-angle-down"></i> <br>
         <span class="scroll-text" data-text="Catégories"></span>
@@ -65,34 +66,38 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
 
 
    <!-- ----------------------------------------     CATEGORIE ET SOUS CATEGORIE ---------------------- -->
-   <table class="forum">
-    <!-- <tr class="header">
-       <th class="main">Catégories</th>
-  
-    </tr> -->
-    <?php
-   require('back/espace_admin/php/functions.php');
-    while($c = $categories->fetch()) {
-       $subcat->execute(array($c['id']));
-       $souscategories = '';
-       while($sc = $subcat->fetch()) {
-          $souscategories .= '<a href="back/affiche_animaux.php?categorie='.url_custom_encode($c['nom']).'&souscategorie='.url_custom_encode($sc['nom']).'">'.$sc['nom'].'</a> | ';
-       }
-       $souscategories = substr($souscategories, 0, -3);
-    ?>
-    <tr>
-       <td class="main">
-          <h1><a href="back/affiche_animaux.php?categorie=<?= url_custom_encode($c['nom']) ?>"><?= $c['nom'] ?></a></h1>
-          <p>
-          <?= $souscategories ?>
-          </p>
-       </td>
-  
-    </tr>
-    <?php } ?>
- </table>
  
 
+<section id="catégorie">
+ <div class="section">
+
+                      <?php
+    require('back/espace_admin/php/functions.php');
+   while($c = $categories->fetch()) {
+      $subcat->execute(array($c['id']));
+      $souscategories = '';
+      while($sc = $subcat->fetch()) {
+        $souscategories .= '<a href="back/affiche_animaux.php?categorie='.url_custom_encode($c['nom']).'&souscategorie='.url_custom_encode($sc['nom']).'">'.$sc['nom'].'</a> | ';
+    }
+      $souscategories = substr($souscategories, 0, -3);
+   ?>
+        <div class="contener">
+             <!-- <div class="con"> -->
+             
+             <a href="back/affiche_animaux.php?categorie=<?= url_custom_encode($c['nom']) ?>"><img src="./images/<?=$c['image']?>" alt="img"></a>
+             
+             <!-- </div> -->
+        <div class="txt_cat">
+        <h1><a href="back/affiche_animaux.php?categorie=<?= url_custom_encode($c['nom']) ?>"><?= $c['nom'] ?></a></h1>
+         
+   
+        </div>
+ </div>
+   <?php } ?>
+
+    </div>
+ 
+</section>
 <!--- sevices  --->
 
 <section class="services" id="services">
@@ -133,7 +138,7 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
       <h1 align="center" class="h1">
         Bonjour, nous espérons que ce message vous trouve en bonne santé.<br><br>
         Nous sommes une organisation qui tend à aider les animaux de compagnie sans abri,<br> Nous les récupérons et prenons soin d'eux <a href="#services">(voir nos services)</a> <br> jusqu'à ce que nous leur trouvions une bonne famille qui les adoptent.<br><br> S'il vous plait
-        n'hésitez pas à <a href="html/contact.html">nous contacter</a> ou faire un <a href="#">don</a> si possible,<br> nous vous en serons très reconnaissants. merci,<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; à bientôt!!
+        n'hésitez pas à <a href="html/contact.html">nous contacter</a> ou faire un <a href="html/paiement.html">don</a> si possible,<br> nous vous en serons très reconnaissants. merci,<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; à bientôt!!
            
       </h1>   
     </section>
@@ -219,10 +224,12 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
     <footer id="footer" class="footer"> 
 
       <span class="copyrights">&copy; 2022 - Sweet tails</span>
-      <a href="#" class="conditions">Conditions générales d'adoption</a>
+      <a href="html/condition.html" class="conditions">Conditions générales d'adoption</a>
     </footer>
 
 <!--- js --->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 <script>
 var cont= document.getElementById('txtdon');
 
@@ -238,11 +245,10 @@ cont.style.display="none";
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="js/script.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
 
 <script type="text/javascript" src="js/js.js"></script>
-<script src="https://kit.fontawesome.com/9f75563516.js" crossorigin="anonymous"></script>
+<!-- <script src="https://kit.fontawesome.com/9f75563516.js" crossorigin="anonymous"></script> -->
 
 
 <!---- ---->

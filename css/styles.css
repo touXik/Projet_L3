@@ -85,7 +85,7 @@ section{
     top:0; left:0; right:0;
     padding:2rem 9%;
     z-index: 1000;
-    background: #fff;
+    background:#fff;
 }
 
 .header .logo{
@@ -97,6 +97,7 @@ section{
 
 }
 
+
 .header .logo span{
     color:var(--yellow);
     font-style: initial;
@@ -106,6 +107,7 @@ section{
     margin:0 1rem;
     font-size: 1.7rem;
     color:var(--black);
+
 }
 
 .header .navbar a:hover{
@@ -160,6 +162,23 @@ section{
     background-size: cover;
     margin:2rem 0;
     
+}
+
+.home h1 {
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    /* left: 7%; */
+    /* background-color: rgb(54, 192, 192); */
+    min-width: 50%;
+    max-height: 43%;
+    top: 20%;
+    text-align: start;
+    font-size: 4em;
+    margin-top: 8%;
+    margin-left: 10%;
+    /* bottom: 176px; */
+    /* transform: translate(-3%, -32%); */
 }
 
 /* --- slider vers le bas ---- */
@@ -513,12 +532,54 @@ section{
   
     font-size: 14px;
 }
+  
+/* categiries  */
+.cat{
+    background-color: chartreuse;
+}
+.contener {
 
+    color: #373737;
+    height: 300px;
+    margin: 15px;
+    position: relative;
+    flex: 1 0 29%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow) ;
+}
+
+.contener:hover {
+    transform: scale(0.98);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.2s all;        
+} 
+.section {
     
-
-      
-
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.txt_cat {
+    position: absolute;
+    color: #fdfbfb;
+    top: 20px;
+    float: right;
+    padding: 12px;
+    font-size: 22px;
+    z-index: 2;
+}
+.txt_cat a{
+    color: #fff;
+}
+.contener img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+  
+}
 
 
 @media (max-width:991px){
@@ -546,7 +607,12 @@ section{
 }
 
 @media (max-width:768px){
-
+     .home h1 {
+        font-size: 3em;
+        top: 10%;
+        /* margin-top: 3%;*/
+        margin-left: 5%; 
+     }
     #menu-btn{
         display: block;
     }
@@ -594,6 +660,10 @@ section{
     .heading{
         font-size: 3rem;
     }
+    .home h1 {
+        font-size: 2em;
+       
+     }
 
 }
 
