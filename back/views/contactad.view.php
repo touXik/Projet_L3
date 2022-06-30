@@ -1,5 +1,10 @@
 
-
+<?php
+       session_start();
+	   if(!$_SESSION['email']) {
+		 header('Location:../html/contact.html');
+	   }
+?>
 <!DOCTYPE html>
 <html>
 <head>

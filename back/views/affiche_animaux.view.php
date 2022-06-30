@@ -33,7 +33,7 @@
         <nav class="navbar">
             <a href="../index_adopteur.php">accueil</a>
            
-            <a href="../html/contactad.html">contact</a>
+            <!-- <a href="../html/contactad.html">contact</a> -->
             <!-- <a href="../html/login.html">connexion</a>
             <a href="../html/register.html">inscription</a> -->
         </nav>

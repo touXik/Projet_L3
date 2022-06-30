@@ -17,7 +17,7 @@
 
        session_start();
 if(!$_SESSION['email']) {
-  header('Location:../html/login.html');
+  header('Location:../html/contact.html');
 }
 include 'bdd/config.php';
 
