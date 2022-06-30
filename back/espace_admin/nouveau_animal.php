@@ -7,6 +7,9 @@ if(isset($_GET['categorie'])) {
    $categorie = $bdd->prepare('SELECT * FROM f_categories WHERE id = ?');
    $categorie->execute(array($get_categorie));
    $cat_exist = $categorie->rowCount();
+   $name_cat=  $bdd -> prepare('SELECT nom FROM f_categories WHERE id=?');
+   $name_cat->execute(array($get_categorie));
+     $name_cat=$name_cat->fetch()['nom'];
    if($cat_exist == 1) {
       $categorie = $categorie->fetch();
       $categorie = $categorie['nom'];
@@ -22,8 +25,8 @@ if(isset($_GET['categorie'])) {
                $sujet = htmlspecialchars($_POST['tsujet']);
                $contenu = htmlspecialchars($_POST['tcontenu']);
                $souscategorie = htmlspecialchars($_POST['souscategorie']);
-                 var_dump($_FILES);
-                  var_dump(exif_imagetype($_FILES['img']['tmp_name']));
+                 // var_dump($_FILES);
+                 //  var_dump(exif_imagetype($_FILES['img']['tmp_name']));
                $verify_sc = $bdd->prepare('SELECT id FROM f_souscategories WHERE id = ? AND id_categorie = ?');
                $verify_sc->execute(array($souscategorie,$get_categorie));
                $verify_sc = $verify_sc->rowCount();
@@ -49,11 +52,11 @@ if(isset($_GET['categorie'])) {
                         $ins = $bdd->prepare('INSERT INTO f_animaux_categorie (id_animal, id_categorie, id_souscategorie) VALUES (?,?,?)');
                         $ins->execute(array($id_animal, $get_categorie, $souscategorie));
                          
-                        $act=1;
-                        $ajout="nouvaux $souscategorie ajouter";
-                        $s_ajout=" $sujet $contenu ";
-                        $notife= $bdd -> prepare('INSERT INTO inf (notifications_name, message, active) VALUES(?,?,?)');
-                        $notife -> execute(array($ajout,$contenu,$act));
+                        // $act=1;
+                        // $ajout="nouvaux $souscategorie ajouter";
+                        // $s_ajout=" $sujet $contenu ";
+                        // $notife= $bdd -> prepare('INSERT INTO inf (notifications_name, message, active) VALUES(?,?,?)');
+                        // $notife -> execute(array($ajout,$contenu,$act));
 
 
                         if(isset($_FILES['img']) AND !empty($_FILES['img']['name'])) {

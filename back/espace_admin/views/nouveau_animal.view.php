@@ -14,10 +14,11 @@
 <body>
 <div>
             <button><a href="index.php">accueil</a></button>
+            <button><a href="forum_animaux.php?categorie=<?= url_custom_encode($get_categorie) ?>"><?=$name_cat?></a></button>
             <!-- <button><a href="chiens.php">chiens</a></button> -->
 
     <form action="" method="POST" enctype="multipart/form-data">
-     <h1>ajouter animal</h1>
+     <h1>ajouter <?=$name_cat?></h1>
      
 
           
@@ -55,7 +56,7 @@
 
 
                         <div class="submit-form">
-                            <button type="submit" name="submit">AJOUTER</button>
+                            <button type="submit" name="tsubmit">AJOUTER</button>
                          </div>
 
     </form>

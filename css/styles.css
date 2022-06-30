@@ -114,15 +114,25 @@ section{
     color:var(--yellow);
 }
 
-#login-btn .btn{
-    margin-top: 0;
+#login-btn a {
+    margin:0 1rem;
+    font-size: 1.7rem;
+    color:var(--black);
+
 }
+
+.wiwi{
+    display: none;
+}
+
+
+/*
 
 #login-btn i{
     display: none;
     font-size: 2.5rem;
     color:var(--light-color);
-}
+} */
 
 .header.active{
     padding:1rem 9%;
@@ -182,6 +192,10 @@ section{
 }
 
 /* --- slider vers le bas ---- */
+
+.landing {
+  margin-top: -18px;
+}
 .scroll-icon {
     /*font-size: 2rem;*/
     color: black;
@@ -533,7 +547,8 @@ section{
     font-size: 14px;
 }
   
-/* categiries  */
+/* categories  */
+
 .cat{
     background-color: chartreuse;
 }
@@ -607,6 +622,24 @@ section{
 }
 
 @media (max-width:768px){
+    .wiwi{
+        display: block;
+    }
+    #login-btn {
+  display: none;
+}
+
+    .landing {
+  display: none;
+}
+.home-parallax {
+  height: 389px;
+}
+
+.contener {
+  height: 187px;
+
+}
      .home h1 {
         font-size: 3em;
         top: 10%;

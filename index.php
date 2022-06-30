@@ -37,11 +37,16 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
             <a href="#a-propos">à propos</a>
             <a href="#services">services</a>
             <a href="html/contact.html">contact</a>
-            <a href="html/login.html">connexion</a>
-            <a href="html/register.html">inscription</a>
+             <a href="#catégorie">Nos Animaux</a>
+             <a class="wiwi" href="html/login.html">connexion</a>
+             <a class="wiwi" href="html/register.html">inscription</a>
+           
+            
         </nav>
 
     <div id="login-btn">
+      <a href="html/login.html">connexion</a>
+      <a href="html/register.html">inscription</a>
            
     </div>
 
@@ -64,7 +69,7 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
 
 
 
-
+</br>
    <!-- ----------------------------------------     CATEGORIE ET SOUS CATEGORIE ---------------------- -->
  
 
@@ -154,28 +159,28 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
     <div class="swiper-wrapper">
 
         <div class="swiper-slide box">
-            <a href="back/affiche_categorie/chats.php"><img src="images/s1.jpg" alt=""></a>
+           <img src="images/s1.jpg" alt="">
             <!-- <div class="content">
                 <h3>chats</h3>
             </div> -->
         </div>
 
         <div class="swiper-slide box">
-            <a href="back/affiche_categorie/chiens.php"><img src="images/s2.jpg" alt=""></a>
+           <img src="images/s2.jpg" alt="">
             <!-- <div class="content">
                 <h3>chiens</h3>
             </div> -->
         </div>
 
         <div class="swiper-slide box">
-            <a href="back/affiche_categorie/equide.php"><img src="images/s3.jpg" alt=""></a>
+            <img src="images/s3.jpg" alt="">
             <!-- <div class="content">
                 <h3>équidés</h3>
             </div> -->
         </div>
 
         <div class="swiper-slide box">
-            <a href="back/affiche_categorie/rogneur.php"><img src="images/s4.jpg" alt=""></a>
+           <img src="images/s4.jpg" alt="">
             <!-- <div class="content">
                 <h3>rongeurs</h3>
             </div> -->

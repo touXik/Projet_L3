@@ -26,7 +26,7 @@ var swiper = new Swiper(".vehicles-slider", {
   spaceBetween: 20,
   loop:true,
   autoplay: {
-    delay: 9500,
+    delay: 2500,
     disableOnInteraction: false,
   },
   pagination: {

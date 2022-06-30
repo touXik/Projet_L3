@@ -14,13 +14,13 @@
 <body>
 <div>
 <header class="header">
-<!-- 
+
 <div id="menu-btn" class="fas fa-bars"></div>
 
 <a href="../index.php" class="logo"> <span>sweet</span>Tails </a>
 
 <nav class="navbar">
-<a href="../index.php">accueil</a> -->
+<a href="../index_adopteur.php">accueil</a>
 <!-- <a href="../../html/contactad.html">contact</a>
 <a href="../affichec_adopt/chiens.php">Chiens</a> -->
 </nav>
@@ -64,9 +64,9 @@
 
   <form action="" method="POST" enctype="multipart/form-data">
           
-       <h5>nom : <?= $user ?></h5>
-       <h5>prenom : <?= $prenom ?></h5>
-       <h5>email : <?= $get_email ?></h5>
+       <h5 class="boxn">nom : <?= $user ?></h5>
+       <h5 class="boxn">prenom : <?= $prenom ?></h5>
+       <h5 class="boxn">email : <?= $get_email ?></h5>
 
    <h1>vuiller saisire info</h1>
     
@@ -82,7 +82,7 @@
     
 <footer id="footer" class="footer"> 
   <span class="copyrights">&copy; 2022 - Sweet tails</span>
-  <a href="#" class="conditions">Condition générales d'adoption</a>
+  <a href="../html/condition.html" class="conditions">Condition générales d'adoption</a>
 </footer>
 
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>

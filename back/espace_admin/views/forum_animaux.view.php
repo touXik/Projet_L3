@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../CSS/admin/anime.css">
   <link rel="icon" type="images/png" href="../../images/log2.jpeg">
-  <title>admin-chiens</title>
+  <title>admin-<?=$get_categorie?></title>
 </head>
 <body>
               
@@ -20,9 +20,9 @@
           <div class="menu">         
      
            <button><a href="index.php"> accueil</a></button>
-         <button><a href="nouveau_animal.php?categorie=<?= $id_categorie ?>"> ajouter animal</a></button> 
+         <button><a href="nouveau_animal.php?categorie=<?= $id_categorie ?>"> ajouter <?=$get_categorie?> </a></button> 
          <button ><a href="../logout.php"> Déconnexion</a></button>
-         
+
         </div>
 
 
@@ -39,10 +39,22 @@
 
 
                 
-                <?php while($t=$animaux->fetch()){ ?>
+                <?php while($t=$animaux->fetch()){
+                     $idx_animal=$t['animal_base_id'];
+                     $idx_scat=  $bdd -> prepare('SELECT id_souscategorie FROM f_animaux_categorie WHERE id_animal=?');
+                     $idx_scat->execute(array($idx_animal));
+                       $idx_scat=$idx_scat->fetch()['id_souscategorie'];
+
+                       
+ 
+                      $racex= $bdd -> prepare('SELECT nom FROM f_souscategories WHERE id=?');
+                     $racex->execute(array($idx_scat));
+                 
+                     $racex= $racex->fetch()['nom'];
+                    ?>
             <dive class="anime">
                        <div class="img">
-                  <a href="affichiens.php?id=<?=$c['id']?>"><img src="img/<?=$t['img']?>" > </a>
+                <img src="img/<?=$t['img']?>" >
                         </div>
                         
 
@@ -50,7 +62,7 @@
                     <div class="txt">
                          <div class="nomc">
                 <p><span> Nom:</span><a href="animal.php?titre=<?= url_custom_encode($t['sujet']) ?>&id=<?= $t['animal_base_id'] ?>"><?= $t['sujet'] ?></a></p>
-           
+                <p> <span> Categorie : </span><?= $racex?></p>
                               </div>
                         <div class="info">
                              <div class="dvi">

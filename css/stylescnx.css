@@ -71,6 +71,22 @@ section{
 }
 
 
+.boxn {
+  width: 100%;
+  border-radius: .5rem;
+  padding: 1rem 1.2rem;
+    padding-top: 1rem;
+  font-size: 1.6rem;
+  text-transform: none;
+  border: var(--border);
+  margin: .7rem 0;
+  height: 62px;
+  text-align: center;
+  padding-top: inherit;
+  font-size: 1.5em;
+}
+
+
 .header{
     display: flex;
     align-items: center;

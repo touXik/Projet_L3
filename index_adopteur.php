@@ -58,8 +58,9 @@
             <a href="#">accueil</a>
             <a href="#a-propos">à propos</a>
             <a href="#services">services</a>
+            <a href="#catégorie">Nos Animaux</a>
             <a href="back/contactad.php">contact</a>
-            <a href="back/logout.php">deconnexion</a>
+            <a class="wiwi" href="back/logout.php">deconnexion</a>
             
            
         <!-- <nav class="navbar navbar-inverse"> -->
@@ -70,7 +71,7 @@
                           
 
     <div id="login-btn">
-           
+               <a href="back/logout.php">deconnexion</a> 
     </div>
 
 </header> 
@@ -84,13 +85,16 @@
 
 
 <!--- slider vers le bas --->
+
 <div class="landing" align="center" >
     <a href="#catégorie" class="delivery-link">
        
         <i class="scroll-icon fas fa-angle-down"></i> <br>
         <span class="scroll-text" data-text="Categories"></span>
     </a>
-</div>
+</div> 
+
+</br>
 
 <!--- categories --->
 <!-- ----------------------------------------     CATEGORIE ET SOUS CATEGORIE ---------------------- -->
@@ -181,28 +185,28 @@
     <div class="swiper-wrapper">
 
         <div class="swiper-slide box">
-            <a href="back/affiche_categorie/chats.php"><img src="images/s1.jpg" alt=""></a>
+          <img src="images/s1.jpg" alt="">
             <!-- <div class="content">
                 <h3>chats</h3>
             </div> -->
         </div>
 
         <div class="swiper-slide box">
-            <a href="back/affiche_categorie/chiens.php"><img src="images/s2.jpg" alt=""></a>
+           <img src="images/s2.jpg" alt="">
             <!-- <div class="content">
                 <h3>chiens</h3>
             </div> -->
         </div>
 
         <div class="swiper-slide box">
-            <a href="back/affiche_categorie/equide.php"><img src="images/s3.jpg" alt=""></a>
+           <img src="images/s3.jpg" alt="">
             <!-- <div class="content">
                 <h3>équidés</h3>
             </div> -->
         </div>
 
         <div class="swiper-slide box">
-            <a href="back/affiche_categorie/rogneur.php"><img src="images/s4.jpg" alt=""></a>
+            <img src="images/s4.jpg" alt="">
             <!-- <div class="content">
                 <h3>rongeurs</h3>
             </div> -->
@@ -214,7 +218,7 @@
 </div>
     </section>
 <!---------------------------------------------------- pub ----------------------------------------->
-  <!-- <section class="categories" id="categories"> 
+   <!-- <section class="categories" id="categories"> 
 
 <h1 class="heading">nos <span>categories</span> </h1> 
 
@@ -254,7 +258,7 @@
     <div class="swiper-pagination"></div>
 
 </div>
-    </section> -->
+    </section> --> 
 
 <!-------------------------------------- boutons partages ----------------------------------- --->
 <section  id="bouton_partage">

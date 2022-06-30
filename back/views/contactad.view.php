@@ -48,8 +48,8 @@
  <!-- method="post" action="../back/contactad.php" -->
 		        <form >
 		            <h3>entrez en contact</h3>
-					    <h1><?=$user?></h1>
-						<h1><?=$get_email?></h1>
+					    <h1 class="boxn">Nom : <?=$user?></h1>
+						<h1 class="boxn">Adresse : <?=$get_email?></h1>
 
 		            <input type="text" name="sujet"   placeholder="sujet" class="box" required>
 		            <textarea placeholder="votre message" name="message_pub" class="box" cols="30" rows="10" required></textarea>
