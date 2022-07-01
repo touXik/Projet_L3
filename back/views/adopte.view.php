@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
    <link rel="icon" type="images/png" href="../images/log2.jpeg">
-<title>Adopte</title>
+<title>formulair de demande</title>
 </head>
 <body>
 <div>
@@ -21,8 +21,7 @@
 
 <nav class="navbar">
 <a href="../index_adopteur.php">accueil</a>
-<!-- <a href="../../html/contactad.html">contact</a>
-<a href="../affichec_adopt/chiens.php">Chiens</a> -->
+
 </nav>
 
 
@@ -68,11 +67,8 @@
        <h5 class="boxn">prenom : <?= $prenom ?></h5>
        <h5 class="boxn">email : <?= $get_email ?></h5>
 
-   <h1>vuiller saisire info</h1>
-    
-   <!-- <input type="text" name="noma" placeholder="nom" class="box" ><br>
-   <input type="text" name="prenom" placeholder="prénom " class="box" ><br>
-   <input type="text" name="email"placeholder=" email " class="box" ><br> -->
+   <h1>veuillez remplire la demande </h1>
+
    <input type="text" name="adress"placeholder=" adress" class="box" ><br>
    <textarea name="demande" placeholder="message" class="box" ></textarea> <br>
    

@@ -1,4 +1,4 @@
-<!-- <link rel="stylesheet" type="text/css" href="../css/stylescnx.css"> -->
+
 <link rel="stylesheet" href="../CSS/mssalrt.css">
 <?php
 
@@ -55,7 +55,7 @@ if (isset($_POST['submit'])){
     } else {
       
             include '../html/register.html'; 
-            include '../html/alrt1.html';
+            include '../html/alrt/alrt1.html';
        
     }
       

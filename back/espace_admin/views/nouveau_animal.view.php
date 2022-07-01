@@ -15,8 +15,7 @@
 <div>
             <button><a href="index.php">accueil</a></button>
             <button><a href="forum_animaux.php?categorie=<?= url_custom_encode($get_categorie) ?>"><?=$name_cat?></a></button>
-            <!-- <button><a href="chiens.php">chiens</a></button> -->
-
+     
     <form action="" method="POST" enctype="multipart/form-data">
      <h1>ajouter <?=$name_cat?></h1>
      
@@ -30,11 +29,7 @@
              </div>
                     
                        <h4> categorie : <?= $categorie ?></h4>
-               <!-- <div class="input-form">
-                          <input type="text" name="categorie" id="password" placeholder=" " required><br>
-                          <label for="categorie">categorie</label>
-              </div> -->
-
+        
                      <div class="input-form">
 
               <select name="souscategorie">

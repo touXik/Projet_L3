@@ -27,20 +27,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
        <!-- --------------------------------------------------- -->
-  
-   
-  
-    
-    <!-- <link rel="stylesheet" type="text/css" href="back/systeme_notifications/assets/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="back/systeme_notifications/assets/stl_not.css"/> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
-    <!-- <script src="back/systeme_notifications/assets/js/jquery.min.js"></script>
-    <script src="back/systeme_notifications/assets/js/bootstrap.min.js"></script>
-    <script src="back/systeme_notifications/assets/dyn_not.js"></script> -->
 
-
-
-        <!-- --------------------------------------------------- -->
     <title>Sweet-tails</title>
 
 
@@ -61,10 +48,7 @@
             <a href="#catégorie">Nos Animaux</a>
             <a href="back/contactad.php">contact</a>
             <a class="wiwi" href="back/logout.php">deconnexion</a>
-            
-           
-        <!-- <nav class="navbar navbar-inverse"> -->
-                <!-- <div class="container-fluid"> -->
+    
             
         </nav>
      
@@ -96,7 +80,7 @@
 
 </br>
 
-<!--- categories --->
+
 <!-- ----------------------------------------     CATEGORIE ET SOUS CATEGORIE ---------------------- -->
  
 
@@ -114,11 +98,9 @@
       $souscategories = substr($souscategories, 0, -3);
    ?>
         <div class="contener">
-             <!-- <div class="con"> -->
-             
+       
              <a href="back/affiche_animaux.php?categorie=<?= url_custom_encode($c['nom']) ?>"><img src="./images/<?=$c['image']?>" alt="img"></a>
-             
-             <!-- </div> -->
+       
         <div class="txt_cat">
         <h1><a href="back/affiche_animaux.php?categorie=<?= url_custom_encode($c['nom']) ?>"><?= $c['nom'] ?></a></h1>
          
@@ -178,38 +160,28 @@
 
 <section class="categories" id="categories"> 
 
-<!-- <h1 class="heading">nos <span>categories</span> </h1>  -->
-
 <div class="swiper vehicles-slider">
 
     <div class="swiper-wrapper">
 
         <div class="swiper-slide box">
           <img src="images/s1.jpg" alt="">
-            <!-- <div class="content">
-                <h3>chats</h3>
-            </div> -->
+
         </div>
 
         <div class="swiper-slide box">
            <img src="images/s2.jpg" alt="">
-            <!-- <div class="content">
-                <h3>chiens</h3>
-            </div> -->
+  
         </div>
 
         <div class="swiper-slide box">
            <img src="images/s3.jpg" alt="">
-            <!-- <div class="content">
-                <h3>équidés</h3>
-            </div> -->
+     
         </div>
 
         <div class="swiper-slide box">
             <img src="images/s4.jpg" alt="">
-            <!-- <div class="content">
-                <h3>rongeurs</h3>
-            </div> -->
+     
         </div>
     </div>
 
@@ -217,48 +189,7 @@
 
 </div>
     </section>
-<!---------------------------------------------------- pub ----------------------------------------->
-   <!-- <section class="categories" id="categories"> 
 
-<h1 class="heading">nos <span>categories</span> </h1> 
-
-<div class="swiper vehicles-slider">
-
-    <div class="swiper-wrapper">
-
-        <div class="swiper-slide box">
-            <a href="back/affiche_categorie/chats.php"><img src="images/s1.jpg" alt=""></a>
-            <div class="content">
-                <h3>chats</h3>
-            </div>
-        </div>
-
-        <div class="swiper-slide box">
-            <a href="back/affiche_categorie/chiens.php"><img src="images/s2.jpg" alt=""></a>
-            <div class="content">
-                <h3>chiens</h3>
-            </div>
-        </div>
-
-        <div class="swiper-slide box">
-            <a href="back/affiche_categorie/equide.php"><img src="images/s3.jpg" alt=""></a>
-            <div class="content">
-                <h3>équidés</h3>
-            </div>
-        </div>
-
-        <div class="swiper-slide box">
-            <a href="back/affiche_categorie/rogneur.php"><img src="images/s4.jpg" alt=""></a>
-            <div class="content">
-                <h3>rongeurs</h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="swiper-pagination"></div>
-
-</div>
-    </section> --> 
 
 <!-------------------------------------- boutons partages ----------------------------------- --->
 <section  id="bouton_partage">
@@ -285,17 +216,17 @@
 </section>
 
 
-<!--- footer --->
+<!--------------------------------------- footer-------------------------------------------- --->
 <footer id="footer" class="footer"> 
   <span class="copyrights">&copy; 2022 - Sweet tails</span>
-  <a href="#" class="conditions">Condition générales d'adoption</a>
+  <a href="html/condition.html" class="conditions">Condition générales d'adoption</a>
 </footer>
 
 
 
 
 
-<!--- js --->
+<!------------------------------------------- js ------------------------------------------------>
 
 
 <script>
@@ -318,12 +249,7 @@ cont.style.display="none";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 
 <script type="text/javascript" src="js/js.js"></script>
-<!-- <script src="https://kit.fontawesome.com/9f75563516.js" crossorigin="anonymous"></script> -->
 
-
-<!---- ---->
-<!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-<script src="js/script.js"></script> -->
 </body>
 
 </html> 

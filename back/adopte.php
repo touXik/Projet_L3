@@ -17,23 +17,7 @@ $get_email=$_SESSION['email'];
    $prenom->execute(array($get_email));
    $prenom=$prenom->fetch()['firstname'];
 
-  // if($user->rowCount()==1){
-  
-   
-    // $prenom_u=$user['lastname'];
-    // $nom_u=$user['firstname'];
-    // $email_u=$user['email'];
-   
-  // }
- 
 
-
-//    if(!$_SESSION['password']) {
-//        header('Location: ../index.html');
-//    }
-
-        
-// !empty($_POST['noma']) AND !empty($_POST['prenom']) AND !empty($_POST['email']) AND
 
              if(isset($_POST['submit'])){
      if( !empty($_POST['adress']) AND  !empty($_POST['demande']) ){
@@ -45,8 +29,7 @@ $get_email=$_SESSION['email'];
                     $animaux=$animaux->fetch();
                     $id_animal=$animaux['id'];
                     $nom_animal=$animaux['sujet'];
-                    // $categorie_c=$animaux['categorie'];
-                    // $info_c=$animaux['info'];
+                
                   }else{
                       die('cet article nexistepas');
                   }

@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 30 juin 2022 à 20:14
--- Version du serveur : 5.7.36
--- Version de PHP : 7.4.26
+-- Généré le :  ven. 01 juil. 2022 à 13:38
+-- Version du serveur :  10.4.10-MariaDB
+-- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `swettails`
+-- Base de données :  `swettails`
 --
 
 -- --------------------------------------------------------
@@ -34,9 +35,16 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `email` varchar(255) NOT NULL,
   `sujet` varchar(255) NOT NULL,
   `message_pub` text NOT NULL,
-  `date_pub` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_pub` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=79 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=429 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `contact`
+--
+
+INSERT INTO `contact` (`id`, `Nom`, `email`, `sujet`, `message_pub`, `date_pub`) VALUES
+(428, 'exemple', 'exemple@', 'donner animal', 'bonjour je.......', '2022-07-01 12:56:10');
 
 -- --------------------------------------------------------
 
@@ -51,19 +59,19 @@ CREATE TABLE IF NOT EXISTS `demande` (
   `email` varchar(255) NOT NULL,
   `adress` text NOT NULL,
   `demande` text NOT NULL,
-  `date_env` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_env` timestamp NOT NULL DEFAULT current_timestamp(),
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_animal` int(11) NOT NULL,
   `nom_animal` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `demande`
 --
 
 INSERT INTO `demande` (`nom`, `prenom`, `email`, `adress`, `demande`, `date_env`, `id`, `id_animal`, `nom_animal`) VALUES
-('r', 'r', 'r@r', 'dihiamerar556@gmail.com', 'fffgggfffff', '2022-06-30 14:21:07', 12, 70, 'abdenor');
+('exemple', 'exemple', 'exemple@', 'tizi-ouzou', '.......message demande.......', '2022-07-01 13:35:14', 16, 87, 'Rider');
 
 -- --------------------------------------------------------
 
@@ -345,20 +353,17 @@ CREATE TABLE IF NOT EXISTS `user` (
   `firstname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`id`, `lastname`, `firstname`, `email`, `password`, `date`) VALUES
-(4, 't', 't', 't@t', '$2y$12$vQcAeLaI4s36mls0jXj89O1kvAntCYyBJ.NhR2Cj8MzCRacaib2VO', '2022-06-29 12:06:56'),
-(3, 'r', 'r', 'r@', '$2y$12$iuYeYNOjCLnLfKw6F/aLveqhpXl.xRtRTjx7csTLf3vOiilaa3TRe', '2022-06-26 16:25:25'),
-(5, 'r', 'r', 'r@r', '$2y$12$kLOtm/oox8eUJyXonCTAs.0Un478tN.Q1OeNAw8.x6OThzsLg76yG', '2022-06-30 11:53:52'),
-(6, 'merar', 'dihia', 'dihiamerar@gmail.com', '$2y$12$aQx9giwLH8okwehtzEN7fOyDpYDS9MeuKte1brpeh5b15R7V5xQ26', '2022-06-30 14:29:04');
+(8, 'exemple', 'exemple', 'exemple@', '$2y$12$gzymlASUjuvCIqvGDNZ4NeczBYIb5nL11EHPul.qft1BRBgnPiWlq', '2022-06-30 21:37:55');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

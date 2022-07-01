@@ -19,9 +19,6 @@
  
 </head>
 <body>
-   <!--  <a href="../logout.php"> Deconnexion</a>
-    <a href="../../index.php"> Acceuil</a>
- -->
 
 
 <header class="header">
@@ -32,10 +29,7 @@
 
         <nav class="navbar">
             <a href="../index_adopteur.php">accueil</a>
-           
-            <!-- <a href="../html/contactad.html">contact</a> -->
-            <!-- <a href="../html/login.html">connexion</a>
-            <a href="../html/register.html">inscription</a> -->
+       
         </nav>
 
     <div id="login-btn">
@@ -76,7 +70,7 @@
              </div>
                 <div class="bttn">
                
-                         <button> <a href="adopte.php?id=<?=$t['animal_base_id']?>" class="btn">adopte</a></button>
+                         <button> <a href="adopte.php?titre=<?= url_custom_encode($t['sujet']) ?>&id=<?=$t['animal_base_id']?>" class="btn">adopte</a></button>
                  </div>
           
         </div>

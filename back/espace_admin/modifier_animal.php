@@ -1,8 +1,5 @@
 <?php
-//   session_start();
-//   if(!$_SESSION['pseudo']) {
-//       header('Location: conexion.html');
-//   }
+
   
 require('../bdd/config.php');
 require('../functions.php');
@@ -36,7 +33,7 @@ if(isset($_POST['sujet'])){
           }else{
               $update = $bdd->prepare('UPDATE f_animaux SET sujet=?,contenu=?,date_edit=NOW() WHERE id=?');
               $update->execute(array($sujet, $contenu,$edit_id)); 
-            //    header('Location:affianimaux.php?id='.$edit_id);
+ 
               echo' <h1>larticle a bine mise ajoure</h1>';
           }
        

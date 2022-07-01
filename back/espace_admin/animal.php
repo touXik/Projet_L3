@@ -10,21 +10,12 @@ if(isset($_GET['titre'],$_GET['id']) AND !empty($_GET['titre']) AND !empty($_GET
    $images = $bdd->prepare('SELECT img FROM images WHERE id_animal = ?');
    $images->execute(array($get_id));
    $images = $images->fetch();
-   //   $images=$bdd -> prepare ('SELECT img FROM images WHERE id_animal= ?');
-      //  $images->execute(array($get_name));
-      //  $images = $images-> fetch()['img'];
-  
+
    if($get_titre == url_custom_encode($titre_original)) {
       $animal = $bdd->prepare('SELECT * FROM f_animaux  WHERE id = ?');
       $animal->execute(array($get_id));
       $animal = $animal->fetch(); 
-      // $images = $bdd->prepare('SELECT img FROM images WHERE id_animal = ?');
-      // $images->execute(array($get_id));
-      // $images = $images->fetch();
-      
-      //  $images = $bdd->prepare('SELECT img FROM images WHERE id_animal = ?');
-      // $images->execute(array($animal['id_createur']));
-      // $images = $images->fetch();
+   
    } else {
       die('Erreur: Le titre ne correspond pas à l\'id');
    }

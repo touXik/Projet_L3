@@ -1,9 +1,4 @@
 
-
-
-
-    <!-- ---------------------------------------------------------------------------------- -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,14 +69,11 @@
                          </div>
                      </div>
                      <div class="button">
-                           <!-- <div class="s"> -->
+              
                 <button class="s"><a href="php/supp_article.php?id=<?=$t['animal_base_id']?>">suprimer</a></button>
-                
-                                <!-- </div> -->
-                         <!-- <div class="m"> -->
+               
               <button class="m"><a href="modifier_animal.php?edit=<?=$t['animal_base_id']?>"> modifier</a></button>
    
-                             <!-- </div> -->
                 </div>
                         </div>
                 </dive>

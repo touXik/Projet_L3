@@ -28,7 +28,7 @@ body{
     border-radius: 7px;
     display: grid;
     grid-template-columns: 1.2fr 6fr 0.5fr;
-  /*  transform: translate(400px);*/
+
     transition: 1s;
 }
 .container-1,.container-2{
@@ -68,7 +68,7 @@ body{
     border-radius: 7px;
     display: grid;
     grid-template-columns: 1.2fr 6fr 0.5fr;
-  /*  transform: translate(400px);*/
+  
     transition: 1s;
 }
 

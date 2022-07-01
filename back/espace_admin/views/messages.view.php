@@ -1,10 +1,6 @@
 <?php
-//   session_start();
-//   if(!$_SESSION['pseudo']) {
-//       header('Location: conexion.html');
-//   }
-  
-  include '../php/config.php';
+
+  include '../../bdd/config.php';
   $contact=$bdd -> query('SELECT * FROM contact ORDER BY date_pub DESC');
 
  
@@ -41,7 +37,7 @@
                                             <div class="info">
                                                    <p><span> NOM : </span><?= $m['Nom']?></a></p>
                                                    <p><span>  Email : </span><?= $m['email']?></p>
-                                                   <p><span> Numéro : </span><?= $m['sujet']?></p>
+                                                   <p><span> Sujet : </span><?= $m['sujet']?></p>
                                                    <p><span> Message : </span><?= $m['message_pub']?></p>
                                              </div>
 

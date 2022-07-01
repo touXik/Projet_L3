@@ -1,4 +1,4 @@
-<!-- <link rel="stylesheet" type="text/css" href="../../css/stylescnx.css"> -->
+
 <link rel="stylesheet" href="../CSS/mssalrt.css">
 
 <?php session_start(); 
@@ -13,8 +13,7 @@ if(isset($_SESSION['lastname']) && isset($_SESSION['firstname']) && isset($_SESS
 
 }else{
    
-    // include '../html/login.html'; 
-    // include '../html/alrt1.html';
+ 
 }
 
 
@@ -41,7 +40,7 @@ if (isset($_POST['submit'])){
              header('Location:../index_adopteur.php');
 
       ?>
-<!-- <a href="../html/login.html">Deconexion</a> -->
+
 <?php
 
 
@@ -50,14 +49,14 @@ if (isset($_POST['submit'])){
             }else {
              
                   include '../html/login.html'; 
-                  include '../../html/alrt/alrt1.html';
+                  include '../html/alrt/alrt1.html';
 
             }
 
         }else {
            
             include '../html/login.html'; 
-            include '../../html/alrt/alrt3.html';
+            include '../html/alrt/alrt3.html';
 
 
         }
@@ -69,7 +68,7 @@ if (isset($_POST['submit'])){
         } else { echo " <h2> veuiller complete l'ensemble des champs </h2> ";
                 ?>
 
-<!-- <a href="../html/login.html">Retourne</a> -->
+
 <?php
 
     }

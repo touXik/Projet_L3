@@ -34,14 +34,16 @@
                               <p><span>emil : </span><?= $a['email']?></p>
                               <p><span>adresse : </span><?= $a['adress']?></p>
                               <p><span>demande : </span><?= $a['demande']?></p>
-                              <p><span>chiens demander --> </span><a class="d" href="animal.php?titre=<?= $a['nom_animal']?>&id=<?=$a['id_animal']?>"><?= $a['nom_animal']?></a></p>
+                              <?php $amin=strtolower($a['nom_animal']) ;?>
+                              <p><span>chiens demander --> </span><a class="d" href="animal.php?titre=<?= $amin?>&id=<?=$a['id_animal']?>"><?= $a['nom_animal']?></a></p>
+
                       </div>
                       <div class="button">
                               <button class="s"><a href="php/supp_article.php?id=<?=$a['id']?>">suprimer</a> </button>
                       </div>
                       </div>
                       <?php } ?>
-                    <!-- </div> -->
+                 
               </div> 
 
               </div>

@@ -1,6 +1,6 @@
 <?php
-require('../bdd/config.php'); /* Connexion à la base de donnée */
-require('../functions.php'); /* Mes fonctions */
+require('../bdd/config.php');
+require('../functions.php');
  
 if(isset($_GET['categorie'])) {
    $get_categorie = htmlspecialchars($_GET['categorie']);
@@ -25,19 +25,14 @@ if(isset($_GET['categorie'])) {
                $sujet = htmlspecialchars($_POST['tsujet']);
                $contenu = htmlspecialchars($_POST['tcontenu']);
                $souscategorie = htmlspecialchars($_POST['souscategorie']);
-                 // var_dump($_FILES);
-                 //  var_dump(exif_imagetype($_FILES['img']['tmp_name']));
+            
                $verify_sc = $bdd->prepare('SELECT id FROM f_souscategories WHERE id = ? AND id_categorie = ?');
                $verify_sc->execute(array($souscategorie,$get_categorie));
                $verify_sc = $verify_sc->rowCount();
                if($verify_sc == 1) {
                   if(!empty($sujet) AND !empty($contenu)) {
                      if(strlen($sujet) <= 70) {
-                        // if(isset($_POST['tmail'])) {
-                        //    $notif_mail = 1;
-                        // } else {
-                        //    $notif_mail = 0;
-                        // }
+                
                         $ins = $bdd->prepare('INSERT INTO f_animaux (sujet, contenu,  date_heure_creation ,date_edit) VALUES(?,?,NOW(),NOW())');
                         $ins->execute(array($sujet,$contenu));
                         $lastid = $bdd->lastInsertId();
@@ -51,16 +46,9 @@ if(isset($_GET['categorie'])) {
                         $id_animal = $lt['id'];
                         $ins = $bdd->prepare('INSERT INTO f_animaux_categorie (id_animal, id_categorie, id_souscategorie) VALUES (?,?,?)');
                         $ins->execute(array($id_animal, $get_categorie, $souscategorie));
-                         
-                        // $act=1;
-                        // $ajout="nouvaux $souscategorie ajouter";
-                        // $s_ajout=" $sujet $contenu ";
-                        // $notife= $bdd -> prepare('INSERT INTO inf (notifications_name, message, active) VALUES(?,?,?)');
-                        // $notife -> execute(array($ajout,$contenu,$act));
-
-
+           
                         if(isset($_FILES['img']) AND !empty($_FILES['img']['name'])) {
-                           // $tailleMax = 2097152;
+                        
                            $tailleMax = 3097152;
                            $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
                            if($_FILES['img']['size'] <= $tailleMax) {
@@ -72,7 +60,7 @@ if(isset($_GET['categorie'])) {
                                     $updateimg = $bdd->prepare('INSERT INTO images (img,id_animal) VALUES (?,?)');
                                     $updateimg->execute(array($lt['id'].".".$extensionUpload,$lt['id']));
    
-                                    // header('Location: animal.view.php?id='.$lt['id']);
+                               
                                  } else {
                                     $msg = "Erreur durant l'importation de votre photo de profil";
                                  }
@@ -83,16 +71,7 @@ if(isset($_GET['categorie'])) {
                               $msg = "Votre photo de profil ne doit pas dépasser 2Mo";
                            }
                         }
-            // if(isset($_FILES['img'])AND !empty($_FILES['img']['name'])){
-            //   if(exif_imagetype($_FILES['img']['tmp_name'])==2){
-            //       $chemin= 'img/'.$lastid.'.jpg';
-            //       move_uploaded_file($_FILES['img']['tmp_name'],$chemin);
-            //   } else{
-            //       $message='Votre image doit etre au format jpg';
-            //   }
-            // }
-         
-
+      
                      } else {
                         $terror = "Votre sujet ne peut pas dépasser 70 caractères";
                      }
@@ -112,8 +91,7 @@ if(isset($_GET['categorie'])) {
    die('Aucune catégorie définie...');
 }
 
-  require('views/nouveau_animal.view.php'); /* Inclusion du fichier vue */
+  require('views/nouveau_animal.view.php'); 
 
       ?>
 
-      <!-- //nouveau animal php -->

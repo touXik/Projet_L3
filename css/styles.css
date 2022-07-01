@@ -2,12 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
-/* --- aspect page ---- */
+/* --------------------------------------- aspect page ------------------------------------- */
 :root{
-   /* --yellow:#f9d806;
-    --light-yellow:#ffee80;
-    --black:#130f40;
-    --light-color:#666;*/
+  
     --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
     --border:.1rem solid rgba(0,0,0,.1);
 }
@@ -33,7 +30,7 @@ section{
     padding:2rem 9%;
 }
 
-/* --- gros titres ---- */
+/* ------------------------------------------------ gros titres---------------------- ---- */
 .heading{
     padding-bottom: 2rem;
     text-align: center;
@@ -58,7 +55,7 @@ section{
     clip-path: polygon(0 90%, 100% 80%, 100% 100%, 0% 100%);
 }
 
-/* --- boutons ---- */
+/* ------------------------------------------------- boutons -------------------------------------- */
 .btn{
     display: inline-block;
     margin-top: 1rem;
@@ -76,7 +73,7 @@ section{
     background:var(--yellow);
 }
 
-/* --- menu de navigation ---- */
+/* ------------------------------- menu de navigation ------------------------------------ */
 .header{
     display: flex;
     align-items: center;
@@ -126,14 +123,6 @@ section{
 }
 
 
-/*
-
-#login-btn i{
-    display: none;
-    font-size: 2.5rem;
-    color:var(--light-color);
-} */
-
 .header.active{
     padding:1rem 9%;
     box-shadow: var(--box-shadow);
@@ -145,27 +134,12 @@ section{
     display: none;
 }
 
- /* ------------notiiifff---------- */
- #over{
-     width: 150px;
-     
- }
- #list{
-
- }
-
-/* --- bg du site ---- */
+/* -------------------------------------- bg du site --------------------------------------- */
 .home{
     padding-top:3.7rem;
     text-align: center;
     overflow-x: hidden;
 }
-/*
-.home h3{
-    color:var(--black);
-    font-size: 7.5vw;
-    text-transform: uppercase;
-}*/
 
 .home img {
     width:100%;
@@ -178,8 +152,7 @@ section{
     color: #fff;
     position: absolute;
     width: 100%;
-    /* left: 7%; */
-    /* background-color: rgb(54, 192, 192); */
+ 
     min-width: 50%;
     max-height: 43%;
     top: 20%;
@@ -187,17 +160,16 @@ section{
     font-size: 4em;
     margin-top: 8%;
     margin-left: 10%;
-    /* bottom: 176px; */
-    /* transform: translate(-3%, -32%); */
+   
 }
 
-/* --- slider vers le bas ---- */
+/* --- -------------------------------------slider vers le bas -------------------------- */
 
 .landing {
   margin-top: -18px;
 }
 .scroll-icon {
-    /*font-size: 2rem;*/
+  
     color: black;
     border: 1px solid gray;
   
@@ -221,7 +193,7 @@ section{
 
 }
 
-/* --- categories animaux ---- */
+/* ----------------------------------- categories animaux ------------------------------------------------ */
 .categories .vehicles-slider{
     padding-bottom: 3rem;
 }
@@ -286,7 +258,7 @@ section{
     background: var(--yellow);
 }
 
-/* --- services ---- */
+/* -------------------------------------- services ------------------------------------------------------ */
 
 
 .services .box-container{
@@ -330,49 +302,8 @@ section{
     transform: scale(1.1);
 }
 
-/*.services .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap:3rem;
-}
 
-.services .box-container .box{
-    padding:0.5rem;
-    border-radius: .1rem;
-    box-shadow: var(--box-shadow);
-    border:var(--border);
-    text-align: center;
-}
-
-.services .box-container .box i{
-    height:6rem;
-    width:6rem;
-    line-height: 6rem;
-    border-radius: 50%;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    background:var(--yellow);
-    color:var(--black);
-}
-
-.services .box-container .box h3{
-    font-size: 2.2rem;
-    color:var(--black);
-}
-
-.services .box-container .box p{
-    line-height: 1.8;
-    padding:1rem 0;
-    font-size: 1.4rem;
-    color:var(--light-color);
-}
-
-.services .box-container .box:hover{
-    transform: scale(1.1);
-}*/
-
-
-/* --- a propos ---- */
+/* --------------------------------- a propos -------------------------------------------------- */
 .a-propos .h1{
     padding-bottom: 2rem;
     text-align: center;
@@ -386,7 +317,7 @@ section{
 }
 
 
-/* --- footer ---- */
+/* ------------------------------------- footer ----------------------------------------- */
 .footer {
     min-height: 100px;
     display: flex;
@@ -410,7 +341,7 @@ section{
     font-size: 1.7rem;
 }
 
-/* --- boutons partages---- */
+/* ---------------------------------- boutons partages---------------------------------------- */
 .toggle {
   width: 50px;
   height: 50px;
@@ -484,10 +415,7 @@ section{
   transition-delay: .3s;
   transform: translateY(-180px);
 }
-/* .share.activee ol li:nth-child(4) {
-    transition-delay: .3s;
-    transform: translateX(-55px);
-  } */
+
 
   .toggle_dons {
     width: 50px;
@@ -530,8 +458,7 @@ section{
     text-align: center;
     color: white;
     position: fixed;
-    /* z-index: 22; */
-    /* right: 50px; */
+  
     bottom: 17px;
     right: 55px;
     padding-top: 6px;
@@ -547,7 +474,7 @@ section{
     font-size: 14px;
 }
   
-/* categories  */
+/* ----------------------------------------categories ---------------------------------------------- */
 
 .cat{
     background-color: chartreuse;
@@ -596,6 +523,7 @@ section{
   
 }
 
+    /* ------------------------------media queryy------------------------------------------------------ */
 
 @media (max-width:991px){
 
@@ -699,334 +627,5 @@ section{
      }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-    scroll-behavior: smooth;
-}
-
-.home-container {
-    min-height: 50vh;
-     background-color:black;
-
-    background: url(../images/bg4.jpeg);
-    background-size: cover;
-
-
-
-}
-
-
-.header {
-    position: fixed;
-    background-color:rgba(0, 0, 0, 0.2);
-    box-shadow: 0 5px 15px rgb(0,0,0,.5);
-    z-index: 1;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    padding: 0 50px;
-}
-
-.logo {
-    width: 180px;
-    border-radius: 5px;
-}
-
-.nav-links {
-
-    display: flex;
-  position: absolute;
-  right: 5%;
-    list-style: none;
-
-
-
-}
-
-.nav-links li {
-    margin: 15px;
-    overflow: hidden;
-       background: rgb(0,0,0,.1);
-      box-shadow: 0 5px 15px rgb(0,0,0,.5);
-}
-
-.nav-links a {
-
-    font-size: 15px;
-    font-weight: 500;
-    color: white;
-    text-decoration: none;
-    position: relative;
-   display: block;
-
-
-    transition: transform 0.4s;
-
-}
-
-.nav-links a::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 100%;
-
-}
-
-
-.nav-links a:hover {
-    transform: translateY(-100%);
-}
-
-.burger {
-    display: none;
-}
-
-.landing {
-    line-height: 80px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 100px;
-}
-
-.big-title {
-    width: 50%;
-    color: white;
-    font-size: 50px;
-    font-family: "Abril Fatface", cursive;
-    font-weight: 30px;
-}
-.texte{
-  width: 50%;
-  color: white;
-  font-size: 50px;
-  font-family: "Abril Fatface", cursive;
-  font-weight: 30px;
-}
-
-.delivery-link {
-  line-height: 25px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: 30px;
-  width: 100px;
-  justify-content: space-between;
-  overflow: hidden;
-}
-.scroll-text {
-  color: white;
-  position: relative;
-  transition: transform 0.4s;
-  font-weight: bold;
-}
-
-.scroll-text::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 100%;
-}
-
-.scroll-text:hover {
-  transform: translateY(-100%);
-}
-
-.scroll-icon {
-  font-size: 30px;
-  color: white;
-}
-
-
-
-
-@media (max-width: 900px) {
-
-    .header {
-        justify-content: space-between;
-    }
-
-    .burger-container {
-        width: 35px;
-        height: 30px;
-        position: relative;
-    }
-
-    .burger {
-        display: block;
-        height: 3px;
-        width: 30px;
-        background: white;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        transition: background 0.4s;
-    }
-
-     .burger-container.active .burger {
-        background: transparent;
-    }
-
-    .burger::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: white;
-        bottom: 8px;
-        transition: transform 0.4s,
-            bottom 0.4s,
-            background 0.4s;
-    }
-
-    .burger-container.active .burger::before {
-        bottom: 0;
-        transform: rotate(-45deg);
-        background: black;
-    }
-
-    .burger::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: white;
-        top: 8px;
-        transition: transform 0.4s,
-            top 0.4s background 0.4s;
-    }
-
-    .burger-container.active .burger::after {
-        top: 0;
-        transform: rotate(45deg);
-        background: black;
-    }
-
-    .nav-links {
-        position: absolute;
-        width: 100%;
-        height: 50vh;
-       background:  linear-gradient(-45deg,rgb(112, 52, 3),rgb(177, 86, 11),rgb(233, 121, 16));
-        left: 0;
-        top: -50vh;
-        transition: top 0.4s ease-in-out;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-start;
-        padding: 0 50px;
-    }
-
-    .nav-links.active {
-        top: 0;
-    }
-
-    .nav-links li {
-        margin: 0;
-    }
-
-    .nav-links a {
-        color: black;
-        font-size: 30px;
-    }
-
-
-}   
-
-
-@media (max-width: 650px) {
-
-    .logo {
-        width: 100px;
-    }
-
-    .landing,
-    .header,
-
-    .footer {
-        padding: 0 7%;
-    }
-
-    .header {
-        height: 100px;
-    }
-
-    .big-title {
-        font-size: 35px;
-        line-height: 30px;
-    }
-    .texte{
-      font-size: 35px;
-    
-    }
-
-    .nav-links a {
-        font-size: 20px;
-    }
-
-    .section-title {
-        font-size: 30px;
-        text-align: center;
-    }
-
-
-
-}
-
-@media (max-width: 400px) {
-
-    .footer {
-        justify-content: center;
-    }
-}
-
-
 
 

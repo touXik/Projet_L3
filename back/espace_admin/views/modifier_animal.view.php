@@ -11,11 +11,6 @@
 </head>
 <body>
 
-    
-
-    <!-- <button><a href="../index.php">acuilleeee</a></button>
-            <button><a href="chiens.php">chiens</a></button> -->
-
     <form action="" method="POST" enctype="multipart/form-data">
      <h1>modifier </h1>
      

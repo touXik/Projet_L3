@@ -1,5 +1,5 @@
 <?php
-require('back/bdd/config.php'); /* Contient la connexion à la $bdd */
+require('back/bdd/config.php'); 
 $categories = $bdd->query('SELECT * FROM f_categories ORDER BY nom');
 $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? ORDER BY nom');
 ?>
@@ -25,7 +25,7 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
 </head>
 
 <body>
-<!--- header  --->
+<!------------------------------------- header  ---------------------------------->
 <header class="header">
 
     <div id="menu-btn" class="fas fa-bars"></div>
@@ -52,13 +52,13 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
 
 </header> 
 
-<!--- bg du site --->
+<!----------------------------------------- bg du site --------------------------------------->
 <div class="home" id="home">
     <img data-speed="5" class="home-parallax" src="images/f.jpg" alt="background du site">
     <h1 class="big-title">N'achetez pas votre <br> animal de compagnie,<span class="texte"></span> </h1>
 </div>
 
-<!--- slider vers le bas --->
+<!------------------------------------------- slider vers le bas----------------------- --->
 <div class="landing" align="center">
     <a href="#catégorie" class="delivery-link">
        
@@ -87,11 +87,9 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
       $souscategories = substr($souscategories, 0, -3);
    ?>
         <div class="contener">
-             <!-- <div class="con"> -->
-             
+         
              <a href="back/affiche_animaux.php?categorie=<?= url_custom_encode($c['nom']) ?>"><img src="./images/<?=$c['image']?>" alt="img"></a>
-             
-             <!-- </div> -->
+          
         <div class="txt_cat">
         <h1><a href="back/affiche_animaux.php?categorie=<?= url_custom_encode($c['nom']) ?>"><?= $c['nom'] ?></a></h1>
          
@@ -103,7 +101,7 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
     </div>
  
 </section>
-<!--- sevices  --->
+<!--------------------------------------------------- sevices ----------------------------------- --->
 
 <section class="services" id="services">
 
@@ -149,10 +147,8 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
     </section>
 
 
-                   <!--------------------------------------- pub --->
+                   <!-------------------------------------------------- pub --------------------------->
 <section class="categories" id="categories"> 
-
-<!-- <h1 class="heading">nos <span>categories</span> </h1>  -->
 
 <div class="swiper vehicles-slider">
 
@@ -160,30 +156,22 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
 
         <div class="swiper-slide box">
            <img src="images/s1.jpg" alt="">
-            <!-- <div class="content">
-                <h3>chats</h3>
-            </div> -->
+
         </div>
 
         <div class="swiper-slide box">
            <img src="images/s2.jpg" alt="">
-            <!-- <div class="content">
-                <h3>chiens</h3>
-            </div> -->
+
         </div>
 
         <div class="swiper-slide box">
             <img src="images/s3.jpg" alt="">
-            <!-- <div class="content">
-                <h3>équidés</h3>
-            </div> -->
+
         </div>
 
         <div class="swiper-slide box">
            <img src="images/s4.jpg" alt="">
-            <!-- <div class="content">
-                <h3>rongeurs</h3>
-            </div> -->
+
         </div>
     </div>
 
@@ -195,7 +183,7 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
 
 
 
-<!--- boutons partages  --->
+<!-------------------------------------------------- boutons partages ---------------------------- --->
 <section  id="bouton_partage">
   <div class="share">
     <ol>
@@ -225,14 +213,14 @@ $subcat = $bdd->prepare('SELECT * FROM f_souscategories WHERE id_categorie = ? O
 
 
 
-    <!--- footer --->
+    <!--- ----------------------------------------footer -------------------------------------->
     <footer id="footer" class="footer"> 
 
       <span class="copyrights">&copy; 2022 - Sweet tails</span>
       <a href="html/condition.html" class="conditions">Conditions générales d'adoption</a>
     </footer>
 
-<!--- js --->
+<!----------------------------------------------------------------- js---------------------------------- --->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 <script>
@@ -253,10 +241,7 @@ cont.style.display="none";
 
 
 <script type="text/javascript" src="js/js.js"></script>
-<!-- <script src="https://kit.fontawesome.com/9f75563516.js" crossorigin="anonymous"></script> -->
 
-
-<!---- ---->
 
 </body>
 
