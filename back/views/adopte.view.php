@@ -65,7 +65,7 @@
           
        <h5 class="boxn">nom : <?= $user ?></h5>
        <h5 class="boxn">prenom : <?= $prenom ?></h5>
-       <h5 class="boxn">email : <?= $get_email ?></h5>
+       <h5 class="boxn"><?= $get_email ?></h5>
 
    <h1>veuillez remplire la demande </h1>
 

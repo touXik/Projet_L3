@@ -14,7 +14,7 @@
 <body>
 <div>
             <button><a href="index.php">accueil</a></button>
-            <button><a href="forum_animaux.php?categorie=<?= url_custom_encode($get_categorie) ?>"><?=$name_cat?></a></button>
+            <button><a href="forum_animaux.php?categorie=<?= url_custom_encode($name_cat) ?>"><?=$name_cat?></a></button>
      
     <form action="" method="POST" enctype="multipart/form-data">
      <h1>ajouter <?=$name_cat?></h1>
